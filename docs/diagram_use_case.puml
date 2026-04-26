@@ -1,0 +1,42 @@
+@startuml
+left to right direction
+
+actor Cliente
+actor Barbeiro
+actor Administrador
+
+package "BarberShop - Sistema de Agendamento" {
+    usecase (Realizar Cadastro) as UC1
+    usecase (Fazer Login) as UC2
+    usecase (Visualizar Catálogo e Profissionais) as UC3
+    usecase (Consultar Disponibilidade) as UC4
+    usecase (Agendar Horário) as UC5
+    usecase (Cancelar Agendamento) as UC6
+    usecase (Visualizar Histórico) as UC7
+    usecase (Atualizar Dados do Perfil) as UC8
+    usecase (Visualizar Agenda Diária) as UC9
+    usecase (Alterar Status do Atendimento) as UC10
+    usecase (Gerenciar Serviços e Preços) as UC11
+    usecase (Gerenciar Equipe) as UC12
+}
+
+Cliente --> UC1
+Cliente --> UC3
+Cliente --> UC4
+Cliente --> UC5
+Cliente --> UC6
+Cliente --> UC7
+Cliente --> UC8
+
+Barbeiro --> UC2
+Barbeiro --> UC5
+Barbeiro --> UC6
+Barbeiro --> UC7
+Barbeiro --> UC8
+Barbeiro --> UC9
+Barbeiro --> UC10
+
+Administrador --> UC11
+Administrador --> UC12
+
+@enduml
