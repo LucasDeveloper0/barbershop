@@ -14,19 +14,21 @@ export default function AdminDashboard() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto py-10 px-4 space-y-10">
-      <header className="flex justify-between items-end">
+    <div className="max-w-7xl mx-auto py-6 sm:py-10 px-4 space-y-8 sm:space-y-10">
+      
+      {/* Ajustado para flex-col no mobile e row em telas maiores */}
+      <header className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4">
         <div>
-          <h1 className="text-4xl font-black text-zinc-50">Admin<span className="text-amber-500">Dashboard</span></h1>
+          <h1 className="text-3xl sm:text-4xl font-black text-zinc-50">Admin<span className="text-amber-500">Dashboard</span></h1>
         </div>
-        <div className="flex gap-3">
-          <button className="bg-zinc-900 text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-zinc-800 transition">Add Service</button>
-          <button className="bg-amber-500 text-zinc-950 px-4 py-2 rounded-lg font-bold text-sm hover:bg-amber-400 transition">Add Barber</button>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <button className="bg-zinc-900 text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-zinc-800 transition w-full sm:w-auto">Agendamento Manual</button>
+          <button className="bg-amber-500 text-zinc-950 px-4 py-2 rounded-lg font-bold text-sm hover:bg-amber-400 transition w-full sm:w-auto">Adicionar Barbeiro</button>
         </div>
       </header>
 
-      {/* DASHBOARD STATS */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* DASHBOARD STATS (Já estava responsivo no seu código, ajustei apenas gap p/ mobile) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
         {stats.map((stat, i) => (
           <div key={i} className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm">
             <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider">{stat.label}</p>
@@ -38,44 +40,49 @@ export default function AdminDashboard() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+        
         {/* RECENT APPOINTMENTS TABLE */}
         <div className="lg:col-span-2 bg-white rounded-2xl border border-zinc-200 shadow-sm overflow-hidden">
-          <div className="p-6 border-b border-zinc-100 flex justify-between items-center">
+          <div className="p-4 sm:p-6 border-b border-zinc-100 flex justify-between items-center">
             <h2 className="font-bold text-lg text-zinc-900">Agendamentos</h2>
             <Link href="#" className="text-amber-600 text-sm font-bold hover:underline">Ver todos</Link>
           </div>
-          <table className="w-full text-left border-collapse">
-            <thead className="bg-zinc-50 text-xs font-bold text-zinc-500 uppercase">
-              <tr>
-                <th className="px-6 py-4">Cliente</th>
-                <th className="px-6 py-4">Serviço</th>
-                <th className="px-6 py-4">Horário</th>
-                <th className="px-6 py-4">Status</th>
-              </tr>
-            </thead>
-            <tbody className="text-sm divide-y divide-zinc-100">
-              {recentBookings.map((booking) => (
-                <tr key={booking.id} className="hover:bg-zinc-50 transition">
-                  <td className="px-6 py-4 font-medium text-zinc-900">{booking.cliente}</td>
-                  <td className="px-6 py-4 text-zinc-600">{booking.servico}</td>
-                  <td className="px-6 py-4 text-zinc-600">{booking.horario}</td>
-                  <td className="px-6 py-4">
-                    <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase ${
-                      booking.status === 'Confirmed' ? 'bg-green-100 text-green-700' : 
-                      booking.status === 'Pending' ? 'bg-amber-100 text-amber-700' : 'bg-zinc-100 text-zinc-700'
-                    }`}>
-                      {booking.status}
-                    </span>
-                  </td>
+          
+          {/* Container com overflow-x-auto para a tabela deslizar no mobile */}
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse min-w-[600px]">
+              <thead className="bg-zinc-50 text-xs font-bold text-zinc-500 uppercase">
+                <tr>
+                  <th className="px-4 sm:px-6 py-4">Cliente</th>
+                  <th className="px-4 sm:px-6 py-4">Serviço</th>
+                  <th className="px-4 sm:px-6 py-4">Horário</th>
+                  <th className="px-4 sm:px-6 py-4">Status</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="text-sm divide-y divide-zinc-100">
+                {recentBookings.map((booking) => (
+                  <tr key={booking.id} className="hover:bg-zinc-50 transition">
+                    <td className="px-4 sm:px-6 py-4 font-medium text-zinc-900">{booking.cliente}</td>
+                    <td className="px-4 sm:px-6 py-4 text-zinc-600">{booking.servico}</td>
+                    <td className="px-4 sm:px-6 py-4 text-zinc-600">{booking.horario}</td>
+                    <td className="px-4 sm:px-6 py-4">
+                      <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase ${
+                        booking.status === 'Confirmed' ? 'bg-green-100 text-green-700' : 
+                        booking.status === 'Pending' ? 'bg-amber-100 text-amber-700' : 'bg-zinc-100 text-zinc-700'
+                      }`}>
+                        {booking.status}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
 
         {/* TEAM QUICK VIEW */}
-        <div className="bg-white rounded-2xl border border-zinc-200 shadow-sm p-6">
+        <div className="bg-white rounded-2xl border border-zinc-200 shadow-sm p-4 sm:p-6">
           <h2 className="font-bold text-lg text-zinc-900 mb-6">Disponibilidade</h2>
           <div className="space-y-6">
             {['John Doe', 'Mike Smith', 'Sarah Connor'].map((barber, i) => (
@@ -97,6 +104,7 @@ export default function AdminDashboard() {
             ))}
           </div>
         </div>
+
       </div>
     </div>
   );

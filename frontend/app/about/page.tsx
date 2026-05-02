@@ -19,7 +19,7 @@ export default function About() {
         
         {/* Texto e Informações */}
         <div>
-          <h2 className="text-3xl font-bold text-zinc-900 mb-6">Our Story</h2>
+          <h2 className="text-3xl font-bold text-zinc-900 mb-6">Nossa História</h2>
           <p className="text-zinc-600 mb-4 leading-relaxed text-lg">
             Fundado desde 2019. Com o objetivo de ser uma referência regional, a BarberShop foi criada com o intuito de oferecer uma experiência única para nossos clientes.
           </p>
@@ -34,7 +34,7 @@ export default function About() {
               <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">De Anos de Experiências</span>
             </div>
             <div className="bg-zinc-50 p-6 rounded-xl border border-zinc-200 w-full text-center shadow-sm">
-              <span className="block text-4xl font-black text-amber-500 mb-1">5mil+</span>
+              <span className="block text-4xl font-black text-amber-500 mb-1">+5mil</span>
               <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Clientes Felizes</span>
             </div>
           </div>
