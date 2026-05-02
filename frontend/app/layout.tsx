@@ -28,7 +28,9 @@ export default function RootLayout({
               <Link href="/prices" className="hover:text-amber-500 transition-colors">Serviços</Link>
               <Link href="/gallery" className="hover:text-amber-500 transition-colors">Galeria</Link>
               <Link href="/login" className="hover:text-amber-500 transition-colors">Login</Link>
-              
+              <Link href="/profile" className="hover:text-amber-500 transition-colors">Perfil</Link>
+              <Link href="/admin" className="hover:text-amber-500 transition-colors">Admin</Link>
+
               {/* Botão de Destaque */}
               <Link href="/appointment" className="bg-amber-500 text-zinc-950 px-5 py-2.5 rounded-md font-bold hover:bg-amber-400 transition-transform hover:scale-105">
                 Agendar
