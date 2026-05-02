@@ -24,7 +24,7 @@ export default function RootLayout({
 
         {/* RODAPÉ */}
         <footer className="bg-zinc-950 text-zinc-400 py-12 border-t border-zinc-900 mt-auto">
-          <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-2">
 
             {/* Bloco 2: Contato */}
             <div>
@@ -48,7 +48,7 @@ export default function RootLayout({
           </div>
 
           {/* Direitos Autorais e Redes Sociais */}
-          <div className="max-w-6xl mx-auto px-4 mt-12 p-16 text-sm flex flex-col md:flex-row justify-between items-center">
+          <div className="max-w-6xl mx-auto px-4 mt-12 pt-8 text-sm flex flex-col md:flex-row justify-center items-center">
             <p>© {new Date().getFullYear()} BarberPro. Todos os direitos reservados.</p>          
           </div>
         </footer>
