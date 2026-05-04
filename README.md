@@ -1,3 +1,4 @@
+
 # BarberShop - Sistema de Gestão e Agendamento para Barbearias
 
 ## 📖 Contexto do Projeto
@@ -13,6 +14,10 @@ A plataforma permite que clientes realizem cadastros, visualizem o catálogo, es
 - **Painel do Cliente:** Área restrita para visualização do histórico e cancelamento de agendamentos via ID.
 - **Painel do Profissional/Admin:** Visualização da agenda diária e alteração do status dos atendimentos.
 - **Segurança (Bônus):** Autenticação de usuários via token JWT e Controle de Acesso Baseado em Funções (RBAC).
+
+## Protótipo de baixa fidelidade (Figma)
+
+[Clique aqui para ver o protótipo de baixa fidelidade](https://www.figma.com/proto/CwY0O0aQ68XZcSvtAhbghI/Prot%C3%B3tipo---Barbearia?node-id=3-2&t=eWMBRIBa3ZeJAf1a-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A2)
 
 ## 💻 Tecnologias Utilizadas
 
