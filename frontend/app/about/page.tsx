@@ -21,7 +21,7 @@ export default function About() {
         <div>
           <h2 className="text-3xl font-bold text-zinc-900 mb-6">Nossa História</h2>
           <p className="text-zinc-600 mb-4 leading-relaxed text-lg">
-            Fundado desde 2019. Com o objetivo de ser uma referência regional, a BarberShop foi criada com o intuito de oferecer uma experiência única para nossos clientes.
+            Fundado desde 2015. Com o objetivo de ser uma referência regional, a BarberPro foi criada com o intuito de oferecer uma experiência única para nossos clientes.
           </p>
           <p className="text-zinc-600 mb-8 leading-relaxed text-lg">
             Trabalhamos com os melhores equipamentos e produtos do mercados. Temos os melhores barbeiros profissionais e nosso ambiente é aconchegante.
