@@ -1,4 +1,4 @@
-package com.barbershop.backend.domain.model;
+package com.barbershop.backend.domain.model.enums;
 
 public enum AppointmentStatus {
     DISPONIVEL;
